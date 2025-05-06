@@ -30,10 +30,14 @@ This system is built to simulate a warehouse environment and handles balancing q
 ### Adding Products and Locations
 Products require product name and quantity to be filled. Location only requires location name
 
+![Screenshot 2025-05-06 180403](https://github.com/user-attachments/assets/31b1c6a0-d5fe-4943-b355-a61378735b49)
 
+![Screenshot 2025-05-06 180441](https://github.com/user-attachments/assets/350afdca-60cf-4475-a773-f2c842c31583)
 
 ### Moving products
 Here products can be moved to a location, from a location as well as to and from a location. Products need to initially be added to various locations from the central warehouse.
+
+![Screenshot 2025-05-06 180632](https://github.com/user-attachments/assets/4bbb65d8-8a8a-47d1-b3e4-4fcb37be9713)
 
 
 ### Editing Products and Locations
