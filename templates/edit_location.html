@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Edit Location</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Edit Location Details</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="product_id" class="form-label">Product:</label>
+                    <select id="product_id" name="product_id" class="form-control" required>
+                        {% for product in products %}
+                        <option value="{{ product[0] }}" {% if product[0] == stock[1] %}selected{% endif %}>{{ product[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" id="location" name="location" class="form-control" value="{{ stock[2] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" class="form-control" value="{{ stock[3] }}" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Location</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{{ url_for('location') }}" class="btn btn-secondary">Back</a>
+    </div>
+{% endblock %}
+    

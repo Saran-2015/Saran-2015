@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Locations</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Add Location</h2>
+        </div>
+        <div class="card-body">
+            <form action="{{ url_for('add_stock_route') }}" method="POST">
+                <div class="mb-3">
+                    <label for="product_id" class="form-label">Product:</label>
+                    <select id="product_id" name="product_id" class="form-control" required>
+                        {% for product in products %}
+                        <option value="{{ product[0] }}">{{ product[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" id="location" name="location" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Location</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Location</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Location</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock[1] }}</td>
+                        <td>{{ stock[2] }}</td>
+                        <td>{{ stock[3] }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_location', stock_id=stock[0]) }}" class="btn btn-warning btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+    
