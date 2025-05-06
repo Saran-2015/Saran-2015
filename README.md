@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/cb2c4d6e-0d5d-4c4d-b9d6-2ff7ea0ab47f
+
 # Inventory-Manager
 An inventory management system using Flask
 
